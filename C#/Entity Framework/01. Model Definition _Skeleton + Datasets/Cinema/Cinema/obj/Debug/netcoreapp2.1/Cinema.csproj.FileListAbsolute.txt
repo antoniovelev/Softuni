@@ -1,0 +1,11 @@
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.deps.json
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.runtimeconfig.json
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.runtimeconfig.dev.json
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.dll
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.pdb
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.csprojAssemblyReference.cache
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.dll
+C:\Users\ACER\Desktop\Databases\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.pdb

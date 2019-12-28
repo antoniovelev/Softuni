@@ -1,0 +1,11 @@
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\bin\Debug\netcoreapp2.1\MusicHub.deps.json
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\bin\Debug\netcoreapp2.1\MusicHub.runtimeconfig.json
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\bin\Debug\netcoreapp2.1\MusicHub.runtimeconfig.dev.json
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\bin\Debug\netcoreapp2.1\MusicHub.dll
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\bin\Debug\netcoreapp2.1\MusicHub.pdb
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.csprojAssemblyReference.cache
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.dll
+C:\Users\ACER\Desktop\Databases\01. Model Defition_Skeleton + Datasets\MusicHub\obj\Debug\netcoreapp2.1\MusicHub.pdb
