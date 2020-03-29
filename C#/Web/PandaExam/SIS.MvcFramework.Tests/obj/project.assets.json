@@ -5702,11 +5702,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework.Tests\\SIS.MvcFramework.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework.Tests\\SIS.MvcFramework.Tests.csproj",
       "projectName": "SIS.MvcFramework.Tests",
-      "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework.Tests\\SIS.MvcFramework.Tests.csproj",
+      "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework.Tests\\SIS.MvcFramework.Tests.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework.Tests\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5722,8 +5722,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
+            "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
             }
           }
         }

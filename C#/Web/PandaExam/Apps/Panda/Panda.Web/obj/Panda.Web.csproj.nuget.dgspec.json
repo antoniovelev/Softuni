@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj": {}
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj",
         "projectName": "Panda.Data",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj": {
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj",
         "projectName": "Panda.Services",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,8 +86,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj"
+              "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj"
               }
             }
           }
@@ -122,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj": {
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj",
         "projectName": "Panda.Web",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Web\\Panda.Web.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Web\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -145,14 +145,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj"
+              "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Data\\Panda.Data.csproj"
               },
-              "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj"
+              "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\Apps\\Panda\\Panda.Services\\Panda.Services.csproj"
               },
-              "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
+              "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
               }
             }
           }
@@ -184,14 +184,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\SIS.HTTP.csproj": {
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\SIS.HTTP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\SIS.HTTP.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\SIS.HTTP.csproj",
         "projectName": "SIS.HTTP",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\SIS.HTTP.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\SIS.HTTP.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -239,14 +239,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
+    "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj",
         "projectName": "SIS.MvcFramework",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\SIS.MvcFramework.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\SIS.MvcFramework.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.MvcFramework\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.MvcFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -262,8 +262,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\SIS.HTTP.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\WebModulExams\\SIS.HTTP\\SIS.HTTP.csproj"
+              "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\SIS.HTTP.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\SoftUni Repo\\Softuni\\C#\\Web\\PandaExam\\SIS.HTTP\\SIS.HTTP.csproj"
               }
             }
           }

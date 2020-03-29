@@ -1,0 +1,8 @@
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\bin\Debug\netcoreapp3.1\IRunes.Models.deps.json
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\bin\Debug\netcoreapp3.1\IRunes.Models.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\bin\Debug\netcoreapp3.1\IRunes.Models.pdb
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\obj\Debug\netcoreapp3.1\IRunes.Models.csprojAssemblyReference.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\obj\Debug\netcoreapp3.1\IRunes.Models.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\obj\Debug\netcoreapp3.1\IRunes.Models.AssemblyInfo.cs
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\obj\Debug\netcoreapp3.1\IRunes.Models.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\IRunExam\IRunes-Skeleton\IRunes\IRunes.Models\obj\Debug\netcoreapp3.1\IRunes.Models.pdb

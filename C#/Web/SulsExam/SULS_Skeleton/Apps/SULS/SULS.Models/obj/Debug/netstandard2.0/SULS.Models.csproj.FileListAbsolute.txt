@@ -1,0 +1,8 @@
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\bin\Debug\netstandard2.0\SULS.Models.deps.json
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\bin\Debug\netstandard2.0\SULS.Models.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\obj\Debug\netstandard2.0\SULS.Models.csprojAssemblyReference.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\obj\Debug\netstandard2.0\SULS.Models.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\obj\Debug\netstandard2.0\SULS.Models.AssemblyInfo.cs
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\bin\Debug\netstandard2.0\SULS.Models.pdb
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\obj\Debug\netstandard2.0\SULS.Models.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\Apps\SULS\SULS.Models\obj\Debug\netstandard2.0\SULS.Models.pdb

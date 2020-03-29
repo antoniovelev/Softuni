@@ -1,0 +1,11 @@
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.deps.json
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.pdb
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.pdb
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csprojAssemblyReference.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfo.cs
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\Acer\Desktop\SoftUni Repo\Softuni\C#\Web\SulsExam\SULS_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb
