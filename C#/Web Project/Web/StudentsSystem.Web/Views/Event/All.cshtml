@@ -1,0 +1,25 @@
+﻿@using StudentsSystem.Common
+@model StudentsSystem.Web.ViewModels.Event.AllViewModel
+@{
+    this.ViewData["Title"] = "All Events";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">All Courses!</h1>
+</div>*@
+
+<hr class="bg-success" style="height: 2px" />
+<main>
+    <h1>All Events</h1>
+    <hr class="bg-success" style="height: 2px" />
+    <a class="btn btn-success text-white" href="/Event/Create">Create Event</a>
+    <hr class="bg-success" style="height: 2px" />
+    <div id="albums">
+        @foreach (var item in Model.Events)
+        {
+            <h3>
+                <a href="/Events/Details?id=@item.Id">@item.Name</a>
+            </h3>
+        }
+    </div>
+</main>

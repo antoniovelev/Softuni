@@ -1,0 +1,25 @@
+﻿@using StudentsSystem.Common
+@model StudentsSystem.Web.ViewModels.Course.AllViewModel
+@{
+    this.ViewData["Title"] = "All Courses";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">All Courses!</h1>
+</div>*@
+
+<hr class="bg-success" style="height: 2px" />
+<main>
+    <h1>All Courses</h1>
+    <hr class="bg-success" style="height: 2px" />
+    <a class="btn btn-success text-white" href="/Course/Create">Create Course</a>
+    <hr class="bg-success" style="height: 2px" />
+    <div id="albums">
+        @foreach (var course in Model.Courses)
+        {
+            <h3>
+                <a href="/Course/Details?id=@course.Id">@course.Name</a>
+            </h3>
+        }
+    </div>
+</main>
