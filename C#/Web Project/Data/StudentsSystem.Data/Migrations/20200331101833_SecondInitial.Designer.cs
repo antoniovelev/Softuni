@@ -10,8 +10,8 @@ using StudentsSystem.Data;
 namespace StudentsSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200329165549_Initial")]
-    partial class Initial
+    [Migration("20200331101833_SecondInitial")]
+    partial class SecondInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -192,13 +192,17 @@ namespace StudentsSystem.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

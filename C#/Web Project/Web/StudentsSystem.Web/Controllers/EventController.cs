@@ -4,15 +4,16 @@
     using StudentsSystem.Services.Data;
     using StudentsSystem.Web.ViewModels.Event;
 
-    public class EventContorller : BaseController
+    public class EventController : BaseController
     {
         private readonly IEventsService eventsService;
 
-        public EventContorller(IEventsService eventsService)
+        public EventController(IEventsService eventsService)
         {
             this.eventsService = eventsService;
         }
 
+        [HttpGet]
         public IActionResult All()
         {
             var events = this.eventsService.GetAllEvents();

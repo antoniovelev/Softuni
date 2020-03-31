@@ -7,6 +7,7 @@
     {
         public static void Main(string[] args)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("EN-US");
             CreateHostBuilder(args).Build().Run();
         }
 

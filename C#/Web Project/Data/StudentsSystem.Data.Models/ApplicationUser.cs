@@ -3,6 +3,7 @@ namespace StudentsSystem.Data.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNetCore.Identity;
     using StudentsSystem.Data.Common.Models;
@@ -18,8 +19,12 @@ namespace StudentsSystem.Data.Models
             this.Courses = new HashSet<Course>();
         }
 
+        [Required]
+        [MaxLength(30)]
         public string FirstName { get; set; }
 
+        [Required]
+        [MaxLength(30)]
         public string LastName { get; set; }
 
         // Audit info
