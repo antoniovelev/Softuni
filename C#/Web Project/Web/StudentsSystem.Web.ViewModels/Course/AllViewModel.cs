@@ -5,7 +5,7 @@
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Mapping;
 
-    public class AllViewModel : IMapFrom<Course>
+    public class AllViewModel
     {
         public IEnumerable<Course> Courses { get; set; }
     }

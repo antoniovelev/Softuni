@@ -1,29 +1,26 @@
 ﻿namespace StudentsSystem.Web.ViewModels.Course
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
 
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Mapping;
 
-    public class CreateInputModel : IMapTo<Course>
+    public class DetailsViewModel : IMapFrom<Course>
     {
-        [Required]
-        [StringLength(100, ErrorMessage = "Name should be between 2 and 100 characters", MinimumLength = 2)]
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
-        [Required]
+        [DisplayFormat(DataFormatString = "dd-MM-yyyy")]
         public string StartOn { get; set; }
 
-        [Required]
+        [DataType(DataType.Date)]
+
+        [DisplayFormat(DataFormatString = "dd-MM-yyyy")]
         public string EndOn { get; set; }
 
-        [Required]
-        [Range(0, 30)]
         public int Duration { get; set; }
 
-        [Required]
-        [MaxLength(300)]
         public string Description { get; set; }
     }
 }

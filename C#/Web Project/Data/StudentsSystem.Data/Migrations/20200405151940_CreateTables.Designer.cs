@@ -10,8 +10,8 @@ using StudentsSystem.Data;
 namespace StudentsSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200331101833_SecondInitial")]
-    partial class SecondInitial
+    [Migration("20200405151940_CreateTables")]
+    partial class CreateTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -277,7 +277,7 @@ namespace StudentsSystem.Data.Migrations
                     b.Property<DateTime>("EndOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Grade")
+                    b.Property<double?>("Grade")
                         .HasColumnType("float");
 
                     b.Property<bool>("IsDeleted")

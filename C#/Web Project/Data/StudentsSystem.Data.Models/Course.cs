@@ -31,9 +31,7 @@
         [MaxLength(300)]
         public string Description { get; set; }
 
-        [Required]
-        [Range(2.00, 6.00)]
-        public double Grade { get; set; }
+        public double? Grade { get; set; }
 
         public ApplicationUser User { get; set; }
 

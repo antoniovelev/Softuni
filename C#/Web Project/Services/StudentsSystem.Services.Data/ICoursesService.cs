@@ -11,5 +11,7 @@
         IEnumerable<Course> GetAllCourses();
 
         Task CreateAsync(string userId, CreateInputModel inputModel);
+
+        T GetCourseById<T>(string id);
     }
 }

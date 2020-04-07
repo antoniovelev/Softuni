@@ -64,6 +64,10 @@
                 .OnDelete(DeleteBehavior.Restrict);
             });
 
+            builder.Entity<Course>()
+          .Property(p => p.Grade)
+          .IsRequired(false);
+
             builder.Entity<Homework>(e =>
             {
                 e.HasOne(h => h.Course)

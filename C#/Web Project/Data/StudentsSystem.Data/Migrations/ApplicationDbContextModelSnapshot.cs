@@ -275,7 +275,7 @@ namespace StudentsSystem.Data.Migrations
                     b.Property<DateTime>("EndOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Grade")
+                    b.Property<double?>("Grade")
                         .HasColumnType("float");
 
                     b.Property<bool>("IsDeleted")

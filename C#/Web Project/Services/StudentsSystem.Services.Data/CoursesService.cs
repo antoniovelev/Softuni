@@ -8,6 +8,7 @@
 
     using StudentsSystem.Data.Common.Repositories;
     using StudentsSystem.Data.Models;
+    using StudentsSystem.Services.Mapping;
     using StudentsSystem.Web.ViewModels.Course;
 
     public class CoursesService : ICoursesService
@@ -28,7 +29,6 @@
                 EndOn = DateTime.ParseExact(inputModel.EndOn, "dd-MM-yyyy", CultureInfo.InvariantCulture),
                 Duration = inputModel.Duration,
                 Description = inputModel.Description,
-                Grade = double.Parse(inputModel.Grade),
                 UserId = userId,
             };
 
@@ -40,6 +40,13 @@
         {
             var allCourses = this.courseRepository.All().ToList();
             return allCourses;
+        }
+
+        public T GetCourseById<T>(string id)
+        {
+            var course = this.courseRepository.All().Where(x => x.Id == id).To<T>().FirstOrDefault();
+
+            return course;
         }
     }
 }
