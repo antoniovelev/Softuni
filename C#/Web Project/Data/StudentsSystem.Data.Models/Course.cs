@@ -33,11 +33,13 @@
 
         public double? Grade { get; set; }
 
-        public ApplicationUser User { get; set; }
-
         [Required]
         public string UserId { get; set; }
 
+        public ApplicationUser User { get; set; }
+
         public IEnumerable<Homework> Homeworks { get; set; }
+
+        public IEnumerable<CourseEvent> CourseEvents { get; set; }
     }
 }

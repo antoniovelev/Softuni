@@ -14,13 +14,11 @@
     public class EventController : BaseController
     {
         private readonly IEventsService eventsService;
-        private readonly ICoursesService coursesService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public EventController(IEventsService eventsService, ICoursesService coursesService, UserManager<ApplicationUser> userManager)
+        public EventController(IEventsService eventsService, UserManager<ApplicationUser> userManager)
         {
             this.eventsService = eventsService;
-            this.coursesService = coursesService;
             this.userManager = userManager;
         }
 
@@ -30,7 +28,7 @@
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var events = this.eventsService.GetAllEvents().Where(x => x.CourseId == user.Courses.Select(y => y.Id).FirstOrDefault());
+            var events = this.eventsService.GetAllEvents().Where(x => x.UserId == user.Id);
 
             var viewModel = new AllViewModel
             {
@@ -60,10 +58,24 @@
                 return this.View(inputModel);
             }
 
+            var user = await this.userManager.GetUserAsync(this.User);
             inputModel.CourseId = courseId;
-            await this.eventsService.CreateEventAsync(inputModel);
+            await this.eventsService.CreateEventAsync(user.Id, inputModel);
 
             return this.Redirect("/Event/All");
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult Details(string id)
+        {
+            var viewModel = this.eventsService.GetEventById<DetailsViewModel>(id);
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model StudentsSystem.Web.ViewModels.Homework.AllViewModel;
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1>All Homeworks</h1>
+
+
+<hr class="bg-success" style="height: 2px" />
+<main>
+    <hr class="bg-success" style="height: 2px" />
+    <hr class="bg-success" style="height: 2px" />
+    <div id="albums">
+        @foreach (var homework in Model.Homeworks)
+        {
+            <h3>
+                <a href="/Homework/Details?id=@homework.Id">@homework.Name</a>
+            </h3>
+        }
+    </div>
+</main>

@@ -39,6 +39,12 @@ namespace StudentsSystem.Data.Models
 
         public IEnumerable<Course> Courses { get; set; }
 
+        public IEnumerable<Event> Events { get; set; }
+
+        public IEnumerable<Homework> Homeworks { get; set; }
+
+        public IEnumerable<Exercise> Exercises { get; set; }
+
         public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }

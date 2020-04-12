@@ -65,14 +65,27 @@
             });
 
             builder.Entity<Course>()
-          .Property(p => p.Grade)
-          .IsRequired(false);
+            .Property(p => p.Grade)
+            .IsRequired(false);
+
+            builder.Entity<Event>(e =>
+            {
+                e.HasOne(x => x.User)
+                .WithMany(u => u.Events)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            });
 
             builder.Entity<Homework>(e =>
             {
                 e.HasOne(h => h.Course)
                 .WithMany(c => c.Homeworks)
                 .HasForeignKey(h => h.CourseId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                e.HasOne(h => h.User)
+                .WithMany(u => u.Homeworks)
+                .HasForeignKey(h => h.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
             });
 
@@ -81,6 +94,11 @@
                 e.HasOne(x => x.Homework)
                 .WithMany(h => h.Exercises)
                 .HasForeignKey(x => x.HomeworkId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                e.HasOne(x => x.User)
+                .WithMany(u => u.Exercises)
+                .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
             });
 

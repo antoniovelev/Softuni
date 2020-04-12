@@ -1,6 +1,7 @@
 ﻿namespace StudentsSystem.Data.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using StudentsSystem.Data.Common.Models;
@@ -23,5 +24,12 @@
         public string CourseId { get; set; }
 
         public Course Course { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        public IEnumerable<CourseEvent> CourseEvents { get; set; }
     }
 }

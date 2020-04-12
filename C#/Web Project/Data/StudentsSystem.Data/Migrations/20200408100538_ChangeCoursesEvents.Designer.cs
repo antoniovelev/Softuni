@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentsSystem.Data;
 
 namespace StudentsSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200408100538_ChangeCoursesEvents")]
+    partial class ChangeCoursesEvents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -366,17 +368,11 @@ namespace StudentsSystem.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Events");
                 });
@@ -415,17 +411,11 @@ namespace StudentsSystem.Data.Migrations
                         .HasColumnType("nvarchar(80)")
                         .HasMaxLength(80);
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("HomeworkId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Exercises");
                 });
@@ -465,17 +455,11 @@ namespace StudentsSystem.Data.Migrations
                         .HasColumnType("nvarchar(80)")
                         .HasMaxLength(80);
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Homeworks");
                 });
@@ -575,13 +559,13 @@ namespace StudentsSystem.Data.Migrations
             modelBuilder.Entity("StudentsSystem.Data.Models.CourseEvent", b =>
                 {
                     b.HasOne("StudentsSystem.Data.Models.Course", "Course")
-                        .WithMany("CourseEvents")
+                        .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("StudentsSystem.Data.Models.Event", "Event")
-                        .WithMany("CourseEvents")
+                        .WithMany()
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -594,12 +578,6 @@ namespace StudentsSystem.Data.Migrations
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("StudentsSystem.Data.Models.ApplicationUser", "User")
-                        .WithMany("Events")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("StudentsSystem.Data.Models.Exercise", b =>
@@ -609,12 +587,6 @@ namespace StudentsSystem.Data.Migrations
                         .HasForeignKey("HomeworkId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("StudentsSystem.Data.Models.ApplicationUser", "User")
-                        .WithMany("Exercises")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("StudentsSystem.Data.Models.Homework", b =>
@@ -622,12 +594,6 @@ namespace StudentsSystem.Data.Migrations
                     b.HasOne("StudentsSystem.Data.Models.Course", "Course")
                         .WithMany("Homeworks")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("StudentsSystem.Data.Models.ApplicationUser", "User")
-                        .WithMany("Homeworks")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

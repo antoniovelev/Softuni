@@ -31,6 +31,11 @@
 
         public Course Course { get; set; }
 
+        [Required]
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
+
         public IEnumerable<Exercise> Exercises { get; set; }
     }
 }

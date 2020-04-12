@@ -10,6 +10,8 @@
     {
         IEnumerable<Event> GetAllEvents();
 
-        Task CreateEventAsync(CreateInputModel inputModel);
+        Task CreateEventAsync(string userId, CreateInputModel inputModel);
+
+        T GetEventById<T>(string id);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace StudentsSystem.Web.Controllers
 {
-    using System.Globalization;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -9,19 +9,18 @@
     using Microsoft.AspNetCore.Mvc;
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Data;
-    using StudentsSystem.Services.Mapping;
-    using StudentsSystem.Web.ViewModels.Course;
+    using StudentsSystem.Web.ViewModels.Homework;
 
-    public class CourseController : BaseController
+    public class HomeworkController : BaseController
     {
-        private readonly ICoursesService coursesService;
+        private readonly IHomeworksService homeworksService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public CourseController(
-            ICoursesService coursesService,
+        public HomeworkController(
+            IHomeworksService homeworksService,
             UserManager<ApplicationUser> userManager)
         {
-            this.coursesService = coursesService;
+            this.homeworksService = homeworksService;
             this.userManager = userManager;
         }
 
@@ -30,46 +29,47 @@
         public async Task<IActionResult> All()
         {
             var user = await this.userManager.GetUserAsync(this.User);
-
-            var allCourses = this.coursesService.GetAllCourses().Where(s => s.UserId == user.Id);
+            var homeworks = this.homeworksService.GetAllHomeworks().Where(x => x.UserId == user.Id);
 
             var viewModel = new AllViewModel
             {
-                Courses = user.Courses,
+                Homeworks = homeworks,
             };
-
             return this.View(viewModel);
         }
 
         [Authorize]
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(string courseId)
         {
-            return this.View();
+            var inputModel = new CreateInputModel
+            {
+                CourseId = courseId,
+            };
+
+            return this.View(inputModel);
         }
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Create(CreateInputModel inputModel)
+        public async Task<IActionResult> Create(string courseId, CreateInputModel inputModel)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
+
             if (!this.ModelState.IsValid)
             {
                 return this.View(inputModel);
             }
 
-            var user = await this.userManager.GetUserAsync(this.User);
-
-            await this.coursesService.CreateAsync(user.Id, inputModel);
-
-            return this.Redirect("/Course/All");
+            await this.homeworksService.CreateHomeworkAsync(user.Id, inputModel);
+            return this.Redirect("/Homework/All");
         }
 
         [Authorize]
         [HttpGet]
         public IActionResult Details(string id)
         {
-            var viewModel = this.coursesService.GetCourseById<DetailsViewModel>(id);
-
+            var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
             if (viewModel == null)
             {
                 return this.NotFound();

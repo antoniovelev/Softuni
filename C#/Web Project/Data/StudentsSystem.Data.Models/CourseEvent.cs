@@ -2,7 +2,9 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class CourseEvent
+    using StudentsSystem.Data.Common.Models;
+
+    public class CourseEvent : BaseDeletableModel<string>
     {
         [Required]
         public string CourseId { get; set; }
