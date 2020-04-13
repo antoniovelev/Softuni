@@ -13,5 +13,7 @@
         Task CreateAsync(string userId, CreateInputModel inputModel);
 
         T GetCourseById<T>(string id);
+
+        Task DeleteByIdAsync(string id);
     }
 }

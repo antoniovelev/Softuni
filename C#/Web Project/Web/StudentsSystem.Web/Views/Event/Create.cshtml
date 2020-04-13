@@ -5,23 +5,26 @@
     this.ViewData["Title"] = "Create event";
 }
 
+<div class="text-center">
+    @Html.ActionLink("Create", "CreatePost", "Event")
+</div>
 @*<form action="/Event/CreatePost?courseId=@Model.CourseId" method="post">
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Date"></label>
-        <input type="datetime" asp-for="Date" class="form-control">
-        <span asp-validation-for="Date" class="text-danger"></span>
-    </div>
-    <hr class="bg-success mt-5" style="height: 2px" />
-    <div class="d-flex justify-content-around mt-4">
-        <a class="btn bg-success text-white" asp-controller="Event" asp-action="CreatePost">Create Event</a>
-        <a href="/Course/Details?id=@Model.CourseId" class="btn bg-success text-white">Back To Course</a>
-    </div>
-</form>*@
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Date"></label>
+            <input type="datetime" asp-for="Date" class="form-control">
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <hr class="bg-success mt-5" style="height: 2px" />
+        <div class="d-flex justify-content-around mt-4">
+            <a class="btn bg-success text-white" asp-controller="Event" asp-action="CreatePost">Create Event</a>
+            <a href="/Course/Details?id=@Model.CourseId" class="btn bg-success text-white">Back To Course</a>
+        </div>
+    </form>*@
 
 
 <form method="post" asp-controller="Event" asp-action="CreatePost" asp-route-courseId="@Model.CourseId">
@@ -41,3 +44,37 @@
         <a href="/Event/All" class="btn bg-success text-white">Back To Courses</a>
     </div>
 </form>
+
+
+<link href="~/lib//jqueryui/themes/redmond/jquery-ui.css" rel="stylesheet" />
+@section Scripts{
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function () { // will trigger when the document is ready
+
+            //Initialise all datepickers whose class name are mydatepicker
+            // Display them with a button which containes a small calendar icon.
+            $(".mydatepicker")
+                .wrap('＜div class="input-group"＞')
+                .datepicker({
+                    dateFormat: "dd.mm.yy",
+                    changeYear: true,
+                    yearRange: "-70:+0",//year selection is possible from starting 70 years before now
+                    showOn: "both"
+                })
+                .next("button").button({
+                    icons: { primary: "ui-icon-calendar" },
+                    label: "Select Date",
+                    text: false
+                })
+                .addClass("btn btn-default")
+                .wrap('＜span class="input-group-btn"＞')
+                .find('.ui-button-text')
+                .css({
+                    'visibility': 'hidden',
+                    'display': 'inline'
+                });
+        });
+    </script>
+}

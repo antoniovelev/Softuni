@@ -77,5 +77,18 @@
 
             return this.View(viewModel);
         }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return this.NotFound();
+            }
+
+            await this.coursesService.DeleteByIdAsync(id);
+            return this.Redirect("/Course/All");
+        }
     }
 }

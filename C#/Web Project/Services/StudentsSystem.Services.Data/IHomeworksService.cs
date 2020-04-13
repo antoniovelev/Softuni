@@ -13,5 +13,7 @@
         Task CreateHomeworkAsync(string userId, CreateInputModel inputModel);
 
         T GetHomeworkById<T>(string id);
+
+        Task DeleteByIdAsync(string id);
     }
 }

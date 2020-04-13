@@ -1,6 +1,5 @@
 ﻿namespace StudentsSystem.Web.Controllers
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -9,18 +8,16 @@
     using Microsoft.AspNetCore.Mvc;
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Data;
-    using StudentsSystem.Web.ViewModels.Homework;
+    using StudentsSystem.Web.ViewModels.Exercise;
 
-    public class HomeworkController : BaseController
+    public class ExerciseController : BaseController
     {
-        private readonly IHomeworksService homeworksService;
+        private readonly IExercisesService exercisesService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public HomeworkController(
-            IHomeworksService homeworksService,
-            UserManager<ApplicationUser> userManager)
+        public ExerciseController(IExercisesService exercisesService, UserManager<ApplicationUser> userManager)
         {
-            this.homeworksService = homeworksService;
+            this.exercisesService = exercisesService;
             this.userManager = userManager;
         }
 
@@ -29,30 +26,30 @@
         public async Task<IActionResult> All()
         {
             var user = await this.userManager.GetUserAsync(this.User);
-            var homeworks = this.homeworksService.GetAllHomeworks().Where(x => x.UserId == user.Id);
+            var exercise = this.exercisesService.GetAllExercise().Where(x => x.UserId == user.Id);
 
             var viewModel = new AllViewModel
             {
-                Homeworks = homeworks,
+                Exercises = exercise,
             };
+
             return this.View(viewModel);
         }
 
         [Authorize]
         [HttpGet]
-        public IActionResult Create(string courseId)
+        public IActionResult Create(string homeworkId)
         {
             var inputModel = new CreateInputModel
             {
-                CourseId = courseId,
+                HomeworkId = homeworkId,
             };
-
             return this.View(inputModel);
         }
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Create(string courseId, CreateInputModel inputModel)
+        public async Task<IActionResult> Create(CreateInputModel inputModel)
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
@@ -61,15 +58,15 @@
                 return this.View(inputModel);
             }
 
-            await this.homeworksService.CreateHomeworkAsync(user.Id, inputModel);
-            return this.Redirect("/Homework/All");
+            await this.exercisesService.CreateExerciseAsync(user.Id, inputModel);
+            return this.Redirect("/Exercise/All");
         }
 
         [Authorize]
         [HttpGet]
         public IActionResult Details(string id)
         {
-            var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
+            var viewModel = this.exercisesService.GetExerciseById<DetailsViewModel>(id);
             if (viewModel == null)
             {
                 return this.NotFound();
@@ -87,8 +84,8 @@
                 return this.NotFound();
             }
 
-            await this.homeworksService.DeleteByIdAsync(id);
-            return this.Redirect("/Homework/All");
+            await this.exercisesService.DeleteByIdAsync(id);
+            return this.Redirect("/Exercise/All");
         }
     }
 }

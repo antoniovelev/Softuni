@@ -47,6 +47,13 @@
             await this.mapTableRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteByIdAsync(string id)
+        {
+            var currentEvent = this.eventRepository.All().Where(x => x.Id == id).FirstOrDefault();
+            this.eventRepository.Delete(currentEvent);
+            await this.eventRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<Event> GetAllEvents()
         {
             var allEvents = this.eventRepository.All().ToList();

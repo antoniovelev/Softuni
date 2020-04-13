@@ -36,6 +36,13 @@
             await this.homeworkRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteByIdAsync(string id)
+        {
+            var homework = this.homeworkRepository.All().Where(x => x.Id == id).FirstOrDefault();
+            this.homeworkRepository.Delete(homework);
+            await this.homeworkRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<Homework> GetAllHomeworks()
         {
             var homeworks = this.homeworkRepository.All().ToList();

@@ -1,0 +1,23 @@
+﻿@model StudentsSystem.Web.ViewModels.Exercise.AllViewModel;
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1>All Exercise</h1>
+
+<hr class="bg-success" style="height: 2px" />
+<main>
+    <hr class="bg-success" style="height: 2px" />
+    <hr class="bg-success" style="height: 2px" />
+    <div id="albums">
+        @foreach (var exercise in Model.Exercises)
+        {
+            <div>
+                <h3>
+                    <a href="/Exercise/Details?id=@exercise.Id">@exercise.Name</a>
+                </h3>
+                <a class="btn btn-success text-white float-lg-right" href="/Exercise/Delete?id=@exercise.Id">Delete</a>
+            </div>
+        }
+    </div>
+</main>

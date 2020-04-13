@@ -36,6 +36,13 @@
             await this.courseRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteByIdAsync(string id)
+        {
+            var course = this.courseRepository.All().Where(x => x.Id == id).FirstOrDefault();
+            this.courseRepository.Delete(course);
+            await this.courseRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<Course> GetAllCourses()
         {
             var allCourses = this.courseRepository.All().ToList();

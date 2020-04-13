@@ -5,6 +5,8 @@
 
     public class DetailsViewModel : IMapFrom<Homework>
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string EndDate { get; set; }

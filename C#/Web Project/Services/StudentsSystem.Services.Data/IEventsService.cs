@@ -13,5 +13,7 @@
         Task CreateEventAsync(string userId, CreateInputModel inputModel);
 
         T GetEventById<T>(string id);
+
+        Task DeleteByIdAsync(string id);
     }
 }

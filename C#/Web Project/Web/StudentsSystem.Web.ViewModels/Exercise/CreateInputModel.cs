@@ -1,26 +1,25 @@
-﻿namespace StudentsSystem.Web.ViewModels.Homework
+﻿namespace StudentsSystem.Web.ViewModels.Exercise
 {
     using System.ComponentModel.DataAnnotations;
 
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Mapping;
 
-    public class CreateInputModel : IMapTo<Homework>
+    public class CreateInputModel : IMapTo<Exercise>
     {
         [Required]
         [StringLength(80, ErrorMessage = "The {0} should be between {2} and {1} characters", MinimumLength = 2)]
         public string Name { get; set; }
 
         [Required]
-        public string EndDate { get; set; }
-
-        public string Description { get; set; }
+        [MaxLength(int.MaxValue)]
+        public string Condition { get; set; }
 
         [Required]
         public bool IsReady { get; set; } = false;
 
         [Required]
-        public string CourseId { get; set; }
+        public string HomeworkId { get; set; }
 
         public string UserUserId { get; set; }
     }

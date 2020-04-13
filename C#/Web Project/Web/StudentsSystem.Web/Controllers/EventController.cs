@@ -77,5 +77,19 @@
 
             return this.View(viewModel);
         }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            //var eventId = this.eventsService.GetEventById<string>(id);
+            if (id == null)
+            {
+                return this.NotFound();
+            }
+
+            await this.eventsService.DeleteByIdAsync(id);
+            return this.Redirect("/Event/All");
+        }
     }
 }

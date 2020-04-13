@@ -5,8 +5,8 @@
 }
 
 @*<div class="text-center">
-    <h1 class="display-4">All Courses!</h1>
-</div>*@
+        <h1 class="display-4">All Courses!</h1>
+    </div>*@
 
 <hr class="bg-success" style="height: 2px" />
 <main>
@@ -17,9 +17,12 @@
     <div id="albums">
         @foreach (var course in Model.Courses)
         {
-            <h3>
-                <a href="/Course/Details?id=@course.Id">@course.Name</a>
-            </h3>
+            <div>
+                <h3>
+                    <a href="/Course/Details?id=@course.Id">@course.Name</a>
+                </h3>
+                <a class="btn btn-success text-white float-lg-right" href="/Course/Delete?id=@course.Id">Delete</a>
+            </div>
         }
     </div>
 </main>

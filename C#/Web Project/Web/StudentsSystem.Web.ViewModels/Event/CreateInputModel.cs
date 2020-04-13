@@ -9,7 +9,7 @@
     public class CreateInputModel : IMapTo<Event>
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Name should be between 2 and 100 characters", MinimumLength = 2)]
+        [StringLength(100, ErrorMessage = "The {0} should be between {2} and {1} characters", MinimumLength = 2)]
         public string Name { get; set; }
 
         [Required]

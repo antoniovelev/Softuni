@@ -1,0 +1,24 @@
+﻿@model StudentsSystem.Web.ViewModels.Exercise.CreateInputModel;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post" asp-controller="Exercise" asp-action="Create" asp-route-homeworkId="@Model.HomeworkId">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Condition"></label>
+        <input asp-for="Condition" class="form-control">
+        <span asp-validation-for="Condition" class="text-danger"></span>
+    </div>
+    <hr class="bg-success mt-5" style="height: 2px" />
+    <div class="d-flex justify-content-around mt-4">
+        <button type="submit" class="btn bg-success text-white" href="/Exercise/Create?homeworkId=@Model.HomeworkId">Create</button>
+        <a href="/Course/All?homeworkId=@Model.HomeworkId" class="btn bg-success text-white">Back To Homework</a>
+    </div>
+</form>
