@@ -1,0 +1,29 @@
+﻿@model StudentsSystem.Web.ViewModels.Homework.EditInputModel;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post" asp-controller="Homework" asp-action="Edit" asp-route-homeworkId="@Model.Id">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EndDate"></label>
+        <input type="datetime" asp-for="EndDate" class="form-control">
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <hr class="bg-success mt-5" style="height: 2px" />
+    <div class="d-flex justify-content-around mt-4">
+        <button type="submit" class="btn bg-success text-white" href="/Homework/Edit?homeworkId=@Model.Id">Edit</button>
+        <a href="/Homework/Details?homeworkId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
+    </div>
+</form>

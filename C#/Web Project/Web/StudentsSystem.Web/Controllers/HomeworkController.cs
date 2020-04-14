@@ -80,6 +80,31 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult Edit(string homeworkId)
+        {
+            var inputModel = this.homeworksService.GetHomeworkById<EditInputModel>(homeworkId);
+            return this.View(inputModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(string homeworkId, EditInputModel inputModel)
+        {
+            var homework = this.homeworksService.GetById(homeworkId);
+            inputModel.Id = homework.Id;
+            inputModel.CourseId = homework.CourseId;
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(inputModel);
+            }
+
+            await this.homeworksService.UpdateAsync(inputModel);
+            return this.Redirect("/Homework/Details?id=" + inputModel.Id);
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)

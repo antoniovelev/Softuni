@@ -82,14 +82,7 @@
         [HttpGet]
         public IActionResult Edit(string eventId)
         {
-            var eventById = this.eventsService.GetEventById(eventId);
-            var inputModel = new EditInputModel
-            {
-                Id = eventId,
-                Name = eventById.Name,
-                Date = eventById.Date.ToString(),
-                CourseId = eventById.CourseId,
-            };
+            var inputModel = this.eventsService.GetEventById<EditInputModel>(eventId);
 
             return this.View(inputModel);
         }

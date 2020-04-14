@@ -50,11 +50,29 @@
             return homeworks;
         }
 
+        public Homework GetById(string id)
+        {
+            var homework = this.homeworkRepository.All().FirstOrDefault(x => x.Id == id);
+            return homework;
+        }
+
         public T GetHomeworkById<T>(string id)
         {
             var homework = this.homeworkRepository.All().Where(x => x.Id == id).To<T>().FirstOrDefault();
 
             return homework;
+        }
+
+        public async Task UpdateAsync(EditInputModel inputModel)
+        {
+            var homework = this.homeworkRepository.All().FirstOrDefault(x => x.Id == inputModel.Id);
+            homework.Name = inputModel.Name;
+            homework.EndDate = DateTime.ParseExact(inputModel.EndDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            homework.Description = inputModel.Description;
+            homework.CourseId = inputModel.CourseId;
+
+            this.homeworkRepository.Update(homework);
+            await this.homeworkRepository.SaveChangesAsync();
         }
     }
 }

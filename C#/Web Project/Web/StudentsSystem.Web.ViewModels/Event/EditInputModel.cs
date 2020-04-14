@@ -2,7 +2,10 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class EditInputModel
+    using StudentsSystem.Data.Models;
+    using StudentsSystem.Services.Mapping;
+
+    public class EditInputModel : IMapFrom<Event>
     {
         public string Id { get; set; }
 

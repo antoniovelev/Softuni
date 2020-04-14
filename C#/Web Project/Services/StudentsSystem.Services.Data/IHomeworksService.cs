@@ -14,6 +14,10 @@
 
         T GetHomeworkById<T>(string id);
 
+        Homework GetById(string id);
+
         Task DeleteByIdAsync(string id);
+
+        Task UpdateAsync(EditInputModel inputModel);
     }
 }
