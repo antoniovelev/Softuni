@@ -1,0 +1,39 @@
+﻿@model StudentsSystem.Web.ViewModels.Course.EditInputModel;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post" asp-controller="Course" asp-action="Edit" asp-route-courseId="@Model.Id">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="StartOn"></label>
+        <input type="datetime" asp-for="StartOn" class="form-control">
+        <span asp-validation-for="StartOn" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EndOn"></label>
+        <input type="datetime" asp-for="EndOn" class="form-control">
+        <span asp-validation-for="EndOn" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Duration"></label>
+        <input type="number" asp-for="Duration" class="form-control">
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <hr class="bg-success mt-5" style="height: 2px" />
+    <div class="d-flex justify-content-around mt-4">
+        <button type="submit" class="btn bg-success text-white" href="/Course/Edit?courseId=@Model.Id">Edit</button>
+        <a href="/Course/Details?courseId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
+    </div>
+</form>

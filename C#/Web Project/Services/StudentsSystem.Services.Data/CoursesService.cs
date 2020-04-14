@@ -49,11 +49,32 @@
             return allCourses;
         }
 
+        public Course GetById(string id)
+        {
+            var course = this.courseRepository.All().FirstOrDefault(x => x.Id == id);
+            return course;
+        }
+
         public T GetCourseById<T>(string id)
         {
             var course = this.courseRepository.All().Where(x => x.Id == id).To<T>().FirstOrDefault();
 
             return course;
+        }
+
+        public async Task UpdateAsync(EditInputModel inputModel)
+        {
+            var course = this.courseRepository.All().FirstOrDefault(x => x.Id == inputModel.Id);
+
+            course.Name = inputModel.Name;
+            course.StartOn = DateTime.ParseExact(inputModel.StartOn, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            course.EndOn = DateTime.ParseExact(inputModel.EndOn, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            course.Duration = inputModel.Duration;
+            course.Description = inputModel.Description;
+            course.UserId = inputModel.UserUserId;
+
+            this.courseRepository.Update(course);
+            await this.courseRepository.SaveChangesAsync();
         }
     }
 }

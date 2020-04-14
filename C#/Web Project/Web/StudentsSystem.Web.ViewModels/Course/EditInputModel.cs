@@ -26,5 +26,7 @@
         [Required]
         [MaxLength(300)]
         public string Description { get; set; }
+
+        public string UserUserId { get; set; }
     }
 }

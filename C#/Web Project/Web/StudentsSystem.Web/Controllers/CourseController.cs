@@ -80,6 +80,30 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult Edit(string courseId)
+        {
+            var inputModel = this.coursesService.GetCourseById<EditInputModel>(courseId);
+            return this.View(inputModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(string courseId, EditInputModel inputModel)
+        {
+            var course = this.coursesService.GetById(courseId);
+            inputModel.Id = course.Id;
+            inputModel.UserUserId = course.UserId;
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(inputModel);
+            }
+
+            await this.coursesService.UpdateAsync(inputModel);
+            return this.Redirect("/Course/Details?id=" + inputModel.Id);
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)

@@ -14,6 +14,10 @@
 
         T GetCourseById<T>(string id);
 
+        Course GetById(string id);
+
         Task DeleteByIdAsync(string id);
+
+        Task UpdateAsync(EditInputModel inputModel);
     }
 }
