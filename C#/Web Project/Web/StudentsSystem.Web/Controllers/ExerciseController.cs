@@ -77,6 +77,41 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult Edit(string exerciseId)
+        {
+            var exercise = this.exercisesService.GetById(exerciseId);
+            var inputModel = new EditInputModel
+            {
+                Id = exercise.Id,
+                Name = exercise.Name,
+                Condition = exercise.Condition,
+                IsReady = exercise.IsReady,
+                HomeworkId = exercise.HomeworkId,
+                UserUserId = exercise.UserId,
+            };
+
+            return this.View(inputModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(string exerciseId, EditInputModel inputModel)
+        {
+            var exercise = this.exercisesService.GetById(exerciseId);
+            inputModel.Id = exercise.Id;
+            inputModel.HomeworkId = exercise.HomeworkId;
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(inputModel);
+            }
+
+            await this.exercisesService.UpdateAsync(inputModel);
+            return this.Redirect("/Exercise/Details?id=" + inputModel.Id);
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)

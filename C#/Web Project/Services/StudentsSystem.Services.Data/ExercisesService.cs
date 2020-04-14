@@ -46,11 +46,30 @@
             return exercises;
         }
 
+        public Exercise GetById(string id)
+        {
+            var exercise = this.exerciseRepository.All().FirstOrDefault(x => x.Id == id);
+
+            return exercise;
+        }
+
         public T GetExerciseById<T>(string id)
         {
             var exercise = this.exerciseRepository.All().Where(x => x.Id == id).To<T>().FirstOrDefault();
 
             return exercise;
+        }
+
+        public async Task UpdateAsync(EditInputModel inputModel)
+        {
+            var exercise = this.exerciseRepository.All().Where(x => x.Id == inputModel.Id).FirstOrDefault();
+
+            exercise.Name = inputModel.Name;
+            exercise.Condition = inputModel.Condition;
+            exercise.HomeworkId = inputModel.HomeworkId;
+
+            this.exerciseRepository.Update(exercise);
+            await this.exerciseRepository.SaveChangesAsync();
         }
     }
 }

@@ -14,6 +14,10 @@
 
         T GetExerciseById<T>(string id);
 
+        Exercise GetById(string id);
+
         Task DeleteByIdAsync(string id);
+
+        Task UpdateAsync(EditInputModel inputModel);
     }
 }

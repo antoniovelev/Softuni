@@ -1,7 +1,25 @@
-﻿
+﻿@model StudentsSystem.Web.ViewModels.Exercise.EditInputModel;
 @{
     ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
 
+<form method="post" asp-controller="Exercise" asp-action="Edit" asp-route-exerciseId="@Model.Id">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Condition"></label>
+        <input asp-for="Condition" class="form-control">
+        <span asp-validation-for="Condition" class="text-danger"></span>
+    </div>
+    <hr class="bg-success mt-5" style="height: 2px" />
+    <div class="d-flex justify-content-around mt-4">
+        <button type="submit" class="btn bg-success text-white" href="/Exercise/Edit?exerciseId=@Model.Id">Edit</button>
+        @*<button type="submit" class="btn bg-success text-white" href="/Event/Edit?eventId=@Model.Id">Edit</button>*@
+        <a href="/Exercise/Details?exerciseId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
+    </div>
+</form>
