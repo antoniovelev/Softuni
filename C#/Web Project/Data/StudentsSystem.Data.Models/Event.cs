@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using StudentsSystem.Data.Common.Models;
+    using StudentsSystem.Services.Mapping;
 
     public class Event : BaseDeletableModel<string>
     {

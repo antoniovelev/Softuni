@@ -66,5 +66,23 @@
 
             return currentEvent;
         }
+
+        public Event GetEventById(string id)
+        {
+            var entity = this.eventRepository.All().FirstOrDefault(s => s.Id == id);
+            return entity;
+        }
+
+        public async Task UpdateAsync(EditInputModel inputModel)
+        {
+            var currentEvent = this.eventRepository.All().Where(x => x.Id == inputModel.Id).FirstOrDefault();
+
+            currentEvent.Name = inputModel.Name;
+            currentEvent.Date = DateTime.ParseExact(inputModel.Date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            currentEvent.CourseId = inputModel.CourseId;
+
+            this.eventRepository.Update(currentEvent);
+            await this.eventRepository.SaveChangesAsync();
+        }
     }
 }

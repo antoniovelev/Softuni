@@ -14,6 +14,10 @@
 
         T GetEventById<T>(string id);
 
+        Event GetEventById(string id);
+
         Task DeleteByIdAsync(string id);
+
+        Task UpdateAsync(EditInputModel inputModel);
     }
 }

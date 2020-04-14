@@ -1,0 +1,24 @@
+﻿@model StudentsSystem.Web.ViewModels.Event.EditInputModel;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post" asp-controller="Event" asp-action="Edit" asp-route-eventId="@Model.Id">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Date"></label>
+        <input type="datetime" asp-for="Date" class="form-control">
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <hr class="bg-success mt-5" style="height: 2px" />
+    <div class="d-flex justify-content-around mt-4">
+        <button type="submit" class="btn bg-success text-white" href="/Event/Edit?eventId=@Model.Id">Edit</button>
+        <a href="/Event/Details?eventId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
+    </div>
+</form>

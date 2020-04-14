@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\StudentsSystem.Services.Mapping\StudentsSystem.Services.Mapping.csproj" />
     <ProjectReference Include="..\StudentsSystem.Data.Common\StudentsSystem.Data.Common.csproj" />
   </ItemGroup>
   

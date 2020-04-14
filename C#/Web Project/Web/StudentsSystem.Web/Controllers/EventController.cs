@@ -80,9 +80,42 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult Edit(string eventId)
+        {
+            var eventById = this.eventsService.GetEventById(eventId);
+            var inputModel = new EditInputModel
+            {
+                Id = eventId,
+                Name = eventById.Name,
+                Date = eventById.Date.ToString(),
+                CourseId = eventById.CourseId,
+            };
+
+            return this.View(inputModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(string eventId, EditInputModel inputModel)
+        {
+            inputModel.Id = eventId;
+            var eventById = this.eventsService.GetEventById(eventId);
+            inputModel.CourseId = eventById.CourseId;
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.NotFound(inputModel);
+            }
+
+            await this.eventsService.UpdateAsync(inputModel);
+            var updateEvent = this.eventsService.GetEventById(inputModel.Id);
+            return this.Redirect("/Event/Details?id=" + updateEvent.Id);
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
-            //var eventId = this.eventsService.GetEventById<string>(id);
             if (id == null)
             {
                 return this.NotFound();
