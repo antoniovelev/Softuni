@@ -31,9 +31,41 @@
         <input asp-for="Description" class="form-control" />
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
+    <div>
+        <label asp-for="Grade"></label>
+        <input asp-for="Grade" class="form-control" />
+        <span asp-validation-for="Grade" class="text-danger"></span>
+    </div>
     <hr class="bg-success mt-5" style="height: 2px" />
     <div class="d-flex justify-content-around mt-4">
         <button type="submit" class="btn bg-success text-white" href="/Course/Edit?courseId=@Model.Id">Edit</button>
         <a href="/Course/Details?courseId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
     </div>
 </form>
+
+<!-- datepicker source: https://github.com/uxsolutions/bootstrap-datepicker -->
+<!-- tutorial: https://formden.com/blog/date-picker -->
+
+<div class="container">
+    <br />
+    <div class="row">
+        <div class='col-sm-3'>
+            <div class="form-group">
+                <div id="filterDate2">
+
+                    <!-- Datepicker as text field -->
+                    <div class="input-group date" data-date-format="dd.mm.yyyy">
+                        <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script> $('.input-group.date').datepicker({format: "dd.mm.yyyy"}); </script>

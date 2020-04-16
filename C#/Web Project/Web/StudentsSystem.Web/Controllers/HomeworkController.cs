@@ -40,6 +40,19 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult Old()
+        {
+            var oldHomeworks = this.homeworksService.GetAllHomeworks().Where(x => x.IsReady == true);
+            var viewModel = new AllViewModel
+            {
+                Homeworks = oldHomeworks,
+            };
+
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+        [HttpGet]
         public IActionResult Create(string courseId)
         {
             var inputModel = new CreateInputModel

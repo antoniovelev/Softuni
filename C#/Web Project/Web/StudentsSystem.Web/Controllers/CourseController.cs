@@ -1,5 +1,6 @@
 ﻿namespace StudentsSystem.Web.Controllers
 {
+    using System;
     using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
@@ -14,6 +15,7 @@
 
     public class CourseController : BaseController
     {
+        private const int RecordsPerPage = 5;
         private readonly ICoursesService coursesService;
         private readonly UserManager<ApplicationUser> userManager;
 
@@ -27,17 +29,36 @@
 
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int? page = 1)
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var allCourses = this.coursesService.GetAllCourses().Where(s => s.UserId == user.Id);
+            var allCourses = this.coursesService.GetAllCourses(RecordsPerPage, (int)((page - 1) * RecordsPerPage)).Where(s => s.UserId == user.Id);
 
             var viewModel = new AllViewModel
             {
-                Courses = user.Courses,
+                Courses = user.Courses.Where(x => !x.Grade.HasValue),
+                CurrentPage = (int)page,
             };
 
+            viewModel.PagesCount = (int)Math.Ceiling((double)allCourses.Count() / RecordsPerPage);
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Old(int? page = 1)
+        {
+            var user = await this.userManager.GetUserAsync(this.User);
+
+            var allCourses = this.coursesService.GetAllCourses(RecordsPerPage, (int)((page - 1) * RecordsPerPage)).Where(x => x.Grade.HasValue && x.UserId == user.Id);
+            var viewModel = new AllViewModel
+            {
+                Courses = allCourses,
+                CurrentPage = (int)page,
+            };
+
+            viewModel.PagesCount = (int)Math.Ceiling((double)allCourses.Count() / RecordsPerPage);
             return this.View(viewModel);
         }
 

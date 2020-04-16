@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
+    <title>@this.ViewData["Title"] - Student System</title>
+    <link rel="stylesheet" href="~/lib//bootstrap//dist/css//bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+
 
     <environment names="Development">
         <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
@@ -14,6 +17,7 @@
         <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
         <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
     </environment>
+    @RenderSection("Header", false)
 </head>
 <body>
     <header>
@@ -56,14 +60,14 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
-    
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -85,6 +89,9 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib//bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @this.RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -43,10 +43,18 @@
             await this.courseRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<Course> GetAllCourses()
+        public IEnumerable<Course> GetAllCourses(int? take = null, int skip = 0)
         {
-            var allCourses = this.courseRepository.All().ToList();
-            return allCourses;
+            var allCourses = this.courseRepository.All()
+                .OrderByDescending(s => s.CreatedOn)
+                .Skip(skip);
+
+            if (take.HasValue)
+            {
+                allCourses = allCourses.Take(take.Value);
+            }
+
+            return allCourses.ToList();
         }
 
         public Course GetById(string id)
@@ -71,6 +79,7 @@
             course.EndOn = DateTime.ParseExact(inputModel.EndOn, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             course.Duration = inputModel.Duration;
             course.Description = inputModel.Description;
+            course.Grade = double.Parse(inputModel.Grade);
             course.UserId = inputModel.UserUserId;
 
             this.courseRepository.Update(course);

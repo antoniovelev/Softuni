@@ -1,6 +1,11 @@
 ﻿@model StudentsSystem.Web.ViewModels.Homework.EditInputModel;
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <link href="~/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
 }
 
 <h1>Edit</h1>
@@ -13,7 +18,7 @@
     </div>
     <div>
         <label asp-for="EndDate"></label>
-        <input type="datetime" asp-for="EndDate" class="form-control">
+        <input type="datetime" asp-for="EndDate" class="form-control" id="datepicker">
         <span asp-validation-for="EndDate" class="text-danger"></span>
     </div>
     <div>
@@ -21,9 +26,38 @@
         <input asp-for="Description" class="form-control" />
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
+    <div>
+        <label>Is Ready</label>
+        <div>
+            <a class="btn btn-group-lg bg-success text-white-50" href="#" onclick="@Model.IsReady = true">
+                <i class="fas fa-check-circle"></i>
+            </a>
+        </div>
+        <div>
+            <a class="btn btn-group-lg bg-danger text-black-50" href="#" onclick="@Model.IsReady = false">
+                <i class="fas fa-window-close"></i>
+            </a>
+        </div>
+    </div>
+
     <hr class="bg-success mt-5" style="height: 2px" />
     <div class="d-flex justify-content-around mt-4">
         <button type="submit" class="btn bg-success text-white" href="/Homework/Edit?homeworkId=@Model.Id">Edit</button>
         <a href="/Homework/Details?homeworkId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
     </div>
 </form>
+
+
+@section Scripts{
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
+    <script src="~/js/datepicker-init.js"></script>
+    
+    <script>
+        jQuery.datepicker.setDateFormatter("dd-MM-yyyy")
+        $('datepicker').datepicker({
+            dateFormat: "dd-MM-yyyy",
+            theme: "dark"
+        })
+    </script>
+}
