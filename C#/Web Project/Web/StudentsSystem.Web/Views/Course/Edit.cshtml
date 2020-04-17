@@ -3,6 +3,10 @@
     ViewData["Title"] = "Edit";
 }
 
+@section Header{
+    <link href="~/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+}
+
 <h1>Edit</h1>
 
 <form method="post" asp-controller="Course" asp-action="Edit" asp-route-courseId="@Model.Id">
@@ -13,12 +17,12 @@
     </div>
     <div>
         <label asp-for="StartOn"></label>
-        <input type="datetime" asp-for="StartOn" class="form-control">
+        <input type="datetime" asp-for="StartOn" class="form-control" id="datepicker">
         <span asp-validation-for="StartOn" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="EndOn"></label>
-        <input type="datetime" asp-for="EndOn" class="form-control">
+        <input type="datetime" asp-for="EndOn" class="form-control" id="datepicker">
         <span asp-validation-for="EndOn" class="text-danger"></span>
     </div>
     <div>
@@ -43,29 +47,10 @@
     </div>
 </form>
 
-<!-- datepicker source: https://github.com/uxsolutions/bootstrap-datepicker -->
-<!-- tutorial: https://formden.com/blog/date-picker -->
 
-<div class="container">
-    <br />
-    <div class="row">
-        <div class='col-sm-3'>
-            <div class="form-group">
-                <div id="filterDate2">
+@section Scripts{
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
+    <script src="~/js/datepicker-init.js"></script>
+}
 
-                    <!-- Datepicker as text field -->
-                    <div class="input-group date" data-date-format="dd.mm.yyyy">
-                        <input type="text" class="form-control" placeholder="dd.mm.yyyy">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script> $('.input-group.date').datepicker({format: "dd.mm.yyyy"}); </script>

@@ -1,8 +1,8 @@
 ﻿$(function () {
     $("#datepicker").datepicker({
-        format: "dd-MM-yyyy",
+        format: "dd-mm-yyyy",
         startView: 2,
-        language: "bg",
+        language: "",
         theme: "dark"
     });
 });

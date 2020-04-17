@@ -1,6 +1,8 @@
 ﻿namespace StudentsSystem.Web.Controllers
 {
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -83,6 +85,7 @@
         public IActionResult Details(string id)
         {
             var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
+            viewModel.EndDate = viewModel.EndDate.Substring(0, 10);
             if (viewModel == null)
             {
                 return this.NotFound();

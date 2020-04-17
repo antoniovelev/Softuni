@@ -29,12 +29,12 @@
     <div>
         <label>Is Ready</label>
         <div>
-            <a class="btn btn-group-lg bg-success text-white-50" href="#" onclick="@Model.IsReady = true">
+            <a class="btn btn-group-lg bg-success text-white-50" href="#" id="target">
                 <i class="fas fa-check-circle"></i>
             </a>
         </div>
         <div>
-            <a class="btn btn-group-lg bg-danger text-black-50" href="#" onclick="@Model.IsReady = false">
+            <a class="btn btn-group-lg bg-danger text-black-50" href="#" onclick="">
                 <i class="fas fa-window-close"></i>
             </a>
         </div>
@@ -52,12 +52,15 @@
     <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
     <script src="~/js/datepicker-init.js"></script>
-    
+
     <script>
-        jQuery.datepicker.setDateFormatter("dd-MM-yyyy")
-        $('datepicker').datepicker({
-            dateFormat: "dd-MM-yyyy",
-            theme: "dark"
-        })
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#target").click(function () {
+
+                @Model.IsReady = true;
+                alert(@Model.IsReady);
+            });
+        });
     </script>
 }

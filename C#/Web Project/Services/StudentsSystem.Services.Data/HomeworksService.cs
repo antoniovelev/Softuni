@@ -67,7 +67,7 @@
         {
             var homework = this.homeworkRepository.All().FirstOrDefault(x => x.Id == inputModel.Id);
             homework.Name = inputModel.Name;
-            homework.EndDate = DateTime.ParseExact(inputModel.EndDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            homework.EndDate = DateTime.ParseExact(inputModel.EndDate, "dd-mm-yyyy", CultureInfo.InvariantCulture);
             homework.Description = inputModel.Description;
             homework.CourseId = inputModel.CourseId;
 

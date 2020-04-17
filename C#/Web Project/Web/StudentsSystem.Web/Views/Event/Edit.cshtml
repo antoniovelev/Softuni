@@ -3,6 +3,10 @@
     ViewData["Title"] = "Edit";
 }
 
+@section Header{
+    <link href="~/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+}
+
 <h1>Edit</h1>
 
 <form method="post" asp-controller="Event" asp-action="Edit" asp-route-eventId="@Model.Id">
@@ -13,7 +17,7 @@
     </div>
     <div>
         <label asp-for="Date"></label>
-        <input type="datetime" asp-for="Date" class="form-control">
+        <input type="datetime" asp-for="Date" class="form-control" id="datepicker">
         <span asp-validation-for="Date" class="text-danger"></span>
     </div>
     <hr class="bg-success mt-5" style="height: 2px" />
@@ -22,3 +26,10 @@
         <a href="/Event/Details?eventId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
     </div>
 </form>
+
+
+@section Scripts{
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
+    <script src="~/js/datepicker-init.js"></script>
+}
