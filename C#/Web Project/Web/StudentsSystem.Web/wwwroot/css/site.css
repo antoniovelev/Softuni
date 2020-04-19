@@ -44,6 +44,9 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-image: url("E-Learning-System.jpg");
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
 }
 .footer {
     position: absolute;
@@ -53,9 +56,4 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
     line-height: 60px; /* Vertically center the text there */
-}
-
-.asd {
-    border-radius: 10%;
-    margin-top: 10px;
 }

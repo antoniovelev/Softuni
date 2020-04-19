@@ -18,7 +18,7 @@
     </div>
     <div>
         <label asp-for="EndDate"></label>
-        <input type="datetime" asp-for="EndDate" class="form-control" id="datepicker">
+        <input asp-for="EndDate" class="form-control" id="datepicker">
         <span asp-validation-for="EndDate" class="text-danger"></span>
     </div>
     <div>
@@ -27,18 +27,23 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div>
+        <label asp-for="IsReady"></label>
+            <a href="#" class="btn btn-success" id="check" onclick="setTrue()">
+                <i class="fa-check-circle bg-success"></i>
+            </a>
+        <span asp-validation-for="IsReady"></span>
+    </div>
+    @*<div>
         <label>Is Ready</label>
         <div>
-            <a class="btn btn-group-lg bg-success text-white-50" href="#" id="target">
-                <i class="fas fa-check-circle"></i>
-            </a>
+            <button type="submit" class="btn bg-success text-white" href="/Homework/FinishHomework?id=@Model.Id">Is ready!</button>
         </div>
         <div>
-            <a class="btn btn-group-lg bg-danger text-black-50" href="#" onclick="">
-                <i class="fas fa-window-close"></i>
+            <a class="btn btn-group-lg bg-danger text-black-50" href="/Homework/NotFinishHomework?id=@Model.Id" onclick="">
             </a>
         </div>
-    </div>
+    </div>*@
+
 
     <hr class="bg-success mt-5" style="height: 2px" />
     <div class="d-flex justify-content-around mt-4">
@@ -54,6 +59,14 @@
     <script src="~/js/datepicker-init.js"></script>
 
     <script>
+        function setTrue(isReady) {
+            var change = isReady;
+            change = true;
+            console.log(change);
+        }
+    </script>
+
+    @*<script>
         $(document).ready(function () {
             console.log("ready!");
             $("#target").click(function () {
@@ -62,5 +75,5 @@
                 alert(@Model.IsReady);
             });
         });
-    </script>
+    </script>*@
 }

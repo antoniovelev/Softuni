@@ -1,5 +1,8 @@
 ﻿namespace StudentsSystem.Web.ViewModels.Homework
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     using StudentsSystem.Data.Models;
     using StudentsSystem.Services.Mapping;
 
@@ -9,6 +12,8 @@
 
         public string Name { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{dd-MM-yyyy}")]
         public string EndDate { get; set; }
 
         public string Description { get; set; }

@@ -79,7 +79,12 @@
             course.EndOn = DateTime.ParseExact(inputModel.EndOn, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             course.Duration = inputModel.Duration;
             course.Description = inputModel.Description;
-            course.Grade = double.Parse(inputModel.Grade);
+
+            if (!string.IsNullOrWhiteSpace(inputModel.Grade))
+            {
+                course.Grade = double.Parse(inputModel.Grade);
+            }
+
             course.UserId = inputModel.UserUserId;
 
             this.courseRepository.Update(course);

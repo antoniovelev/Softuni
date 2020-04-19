@@ -84,6 +84,7 @@
         {
             var inputModel = this.eventsService.GetEventById<EditInputModel>(eventId);
 
+            inputModel.Date = string.Empty;
             return this.View(inputModel);
         }
 

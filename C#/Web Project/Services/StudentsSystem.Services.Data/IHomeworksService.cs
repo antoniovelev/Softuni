@@ -19,5 +19,9 @@
         Task DeleteByIdAsync(string id);
 
         Task UpdateAsync(EditInputModel inputModel);
+
+        Task SetFinishedAsync(Homework homework);
+
+        Task SetNotFinishedAsync(Homework homework);
     }
 }

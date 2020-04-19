@@ -3,6 +3,10 @@
     ViewData["Title"] = "Create";
 }
 
+@section Header{
+    <link href="~/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+}
+
 <h1>Create</h1>
 
 <form method="post" asp-controller="Homework" asp-action="Create" asp-route-courseId="@Model.CourseId">
@@ -13,7 +17,7 @@
     </div>
     <div>
         <label asp-for="EndDate"></label>
-        <input type="datetime" asp-for="EndDate" class="form-control">
+        <input type="datetime" asp-for="EndDate" class="form-control" id="datepicker">
         <span asp-validation-for="EndDate" class="text-danger"></span>
     </div>
     <div>
@@ -29,30 +33,8 @@
 </form>
 
 
-
-
-@*@<form method="post" action="/Homework/Create?courseId=@Model">
-    <div>
-        <label asp-for="Name"></label>
-        <input type="text" asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="EndDate"></label>
-        <input type="datetime" asp-for="EndDate" class="form-control" />
-        <span asp-validation-for="EndDate" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Description"></label>
-        <input type="text" asp-for="Description" class="form-control" />
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
-    <hr class="bg-success mt-5" style="height: 2px" />
-    <div class="d-flex justify-content-around mt-4">
-        <button type="submit" class="btn bg-success text-white">Create</button>
-        <a href="/Homework/CreatePost" class=" btn bg-success text-white">Create</a>
-        <button type="submit" class="btn bg-success text-white" asp-controller="Homework" asp-action="Create" asp-route-courseId="id">Create Homework</button>*
-        <a class="btn bg-success text-white" asp-controller="Course" asp-action="Details">Back To Course</a>
-    </div>
-</form>
-*@
+@section Scripts{
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
+    <script src="~/js/datepicker-init.js"></script>
+}

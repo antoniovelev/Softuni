@@ -101,9 +101,24 @@
 
         [Authorize]
         [HttpGet]
+        public IActionResult OldCourseDetails(string id)
+        {
+            var viewModel = this.coursesService.GetCourseById<DetailsViewModel>(id);
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+        [HttpGet]
         public IActionResult Edit(string courseId)
         {
             var inputModel = this.coursesService.GetCourseById<EditInputModel>(courseId);
+            inputModel.StartOn = string.Empty;
+            inputModel.EndOn = string.Empty;
             return this.View(inputModel);
         }
 
@@ -120,7 +135,7 @@
             }
 
             await this.coursesService.UpdateAsync(inputModel);
-            return this.Redirect("/Course/Details?id=" + inputModel.Id);
+            return this.Redirect("/Course/All");
         }
 
         [Authorize]

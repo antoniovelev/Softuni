@@ -85,7 +85,6 @@
         public IActionResult Details(string id)
         {
             var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
-            viewModel.EndDate = viewModel.EndDate.Substring(0, 10);
             if (viewModel == null)
             {
                 return this.NotFound();
@@ -99,6 +98,7 @@
         public IActionResult Edit(string homeworkId)
         {
             var inputModel = this.homeworksService.GetHomeworkById<EditInputModel>(homeworkId);
+            inputModel.EndDate = string.Empty;
             return this.View(inputModel);
         }
 
@@ -130,6 +130,22 @@
 
             await this.homeworksService.DeleteByIdAsync(id);
             return this.Redirect("/Homework/All");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> FinishHomework(string id)
+        {
+            var homework = this.homeworksService.GetById(id);
+            await this.homeworksService.SetFinishedAsync(homework);
+            return this.Redirect("/Homework/Details?id=" + homework.Id);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NotFinishHomework(string id)
+        {
+            var homework = this.homeworksService.GetById(id);
+            await this.homeworksService.SetNotFinishedAsync(homework);
+            return this.Redirect("/Homework/Details?id=" + homework.Id);
         }
     }
 }

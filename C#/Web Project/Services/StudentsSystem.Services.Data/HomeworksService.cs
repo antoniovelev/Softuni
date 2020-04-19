@@ -63,6 +63,20 @@
             return homework;
         }
 
+        public async Task SetFinishedAsync(Homework homework)
+        {
+            homework.IsReady = true;
+            this.homeworkRepository.Update(homework);
+            await this.homeworkRepository.SaveChangesAsync();
+        }
+
+        public async Task SetNotFinishedAsync(Homework homework)
+        {
+            homework.IsReady = false;
+            this.homeworkRepository.Update(homework);
+            await this.homeworkRepository.SaveChangesAsync();
+        }
+
         public async Task UpdateAsync(EditInputModel inputModel)
         {
             var homework = this.homeworkRepository.All().FirstOrDefault(x => x.Id == inputModel.Id);

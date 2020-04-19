@@ -27,6 +27,7 @@
         [MaxLength(300)]
         public string Description { get; set; }
 
+        [StringLength(4, ErrorMessage = "The {0} must be write with , not with .", MinimumLength = 0)]
         public string Grade { get; set; }
 
         public string UserUserId { get; set; }
