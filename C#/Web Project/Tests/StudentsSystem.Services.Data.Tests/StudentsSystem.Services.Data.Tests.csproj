@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\StudentsSystem.Data\StudentsSystem.Data.csproj" />
     <ProjectReference Include="..\..\Services\StudentsSystem.Services.Data\StudentsSystem.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Web\StudentsSystem.Web\StudentsSystem.Web.csproj" />
   </ItemGroup>
 
 </Project>

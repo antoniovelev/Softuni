@@ -28,21 +28,21 @@
     </div>
     <div>
         <label asp-for="IsReady"></label>
-            <a href="#" class="btn btn-success" id="check" onclick="setTrue()">
-                <i class="fa-check-circle bg-success"></i>
-            </a>
+        <a href="#" class="btn btn-success" id="check" onclick="setTrue(@Model.IsReady)">
+            <i class="fa-check-circle bg-success"></i>
+        </a>
         <span asp-validation-for="IsReady"></span>
     </div>
     @*<div>
-        <label>Is Ready</label>
-        <div>
-            <button type="submit" class="btn bg-success text-white" href="/Homework/FinishHomework?id=@Model.Id">Is ready!</button>
-        </div>
-        <div>
-            <a class="btn btn-group-lg bg-danger text-black-50" href="/Homework/NotFinishHomework?id=@Model.Id" onclick="">
-            </a>
-        </div>
-    </div>*@
+            <label>Is Ready</label>
+            <div>
+                <button type="submit" class="btn bg-success text-white" href="/Homework/FinishHomework?id=@Model.Id">Is ready!</button>
+            </div>
+            <div>
+                <a class="btn btn-group-lg bg-danger text-black-50" href="/Homework/NotFinishHomework?id=@Model.Id" onclick="">
+                </a>
+            </div>
+        </div>*@
 
 
     <hr class="bg-success mt-5" style="height: 2px" />
@@ -62,18 +62,25 @@
         function setTrue(isReady) {
             var change = isReady;
             change = true;
-            console.log(change);
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Edit", "Homework ")',
+                contentType: "application/json; charset=utf-8",
+                data: { a: "testing" },
+                dataType: "json",
+            });
         }
     </script>
 
     @*<script>
-        $(document).ready(function () {
-            console.log("ready!");
-            $("#target").click(function () {
+            $(document).ready(function () {
+                console.log("ready!");
+                $("#target").click(function () {
 
-                @Model.IsReady = true;
-                alert(@Model.IsReady);
+                    @Model.IsReady = true;
+                    alert(@Model.IsReady);
+                });
             });
-        });
-    </script>*@
+        </script>*@
 }
