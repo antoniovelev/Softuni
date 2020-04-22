@@ -4,8 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.DependencyInjection;
+
     using Moq;
     using StudentsSystem.Data;
     using StudentsSystem.Data.Common.Repositories;
@@ -73,7 +72,7 @@
                 Name = "test",
                 Description = "test",
             };
-            this.context.Add(homework);
+            this.context.Homeworks.Add(homework);
             this.context.SaveChanges();
 
             var homeworkById = this.service.GetById(homework.Id);
@@ -85,7 +84,14 @@
         public void GetHomeworkWithMapperCorrect()
         {
             var homeworkId = Guid.NewGuid().ToString();
-            var homework = this.mock.Setup(x => x.GetHomeworkById<DetailsViewModel>(homeworkId));
+            var homework = new Homework { Id = homeworkId, Name = "tets1", Description = "test1" };
+            this.context.Homeworks.Add(homework);
+            this.context.SaveChanges();
+
+            var repo = new Mock<IDeletableEntityRepository<Homework>>();
+            var homeworkService = new HomeworksService(repo.Object);
+
+            var viewModel = this.mock.Setup(x => x.GetHomeworkById<DetailsViewModel>(homeworkId));
             Assert.NotNull(homework);
         }
 
@@ -106,6 +112,35 @@
 
             var result = this.service.GetAllHomeworks().Count();
             Assert.Equal(2, result);
+        }
+
+        [Fact]
+        public async Task UpdateAsyncCorrect()
+        {
+            var homeworkId = Guid.NewGuid().ToString();
+            var homework = new Homework
+            {
+                Id = homeworkId, Name = "tets1", Description = "test1",
+            };
+
+            this.context.Homeworks.Add(homework);
+            await this.context.SaveChangesAsync();
+
+            var editModel = new EditInputModel
+            {
+                Id = homeworkId,
+                Name = "Update",
+                EndDate = "24-03-2020",
+                Description = "update description",
+            };
+
+            await this.service.UpdateAsync(editModel);
+            var updateHomework = this.service.GetById(editModel.Id);
+
+            Assert.NotEqual("tets1", updateHomework.Name);
+            Assert.NotEqual("test1", updateHomework.Description);
+            Assert.Equal(updateHomework.Name, homework.Name);
+            Assert.Equal(updateHomework.Id, homework.Id);
         }
     }
 }

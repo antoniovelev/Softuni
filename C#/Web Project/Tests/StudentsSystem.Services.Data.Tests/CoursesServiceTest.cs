@@ -52,7 +52,7 @@
         }
 
         [Fact]
-        public void GetCourseByIdCorrect()
+        public void GetCourseByIdWhitMapperCorrect()
         {
             var courseId = Guid.NewGuid().ToString();
             var course = this.mockService.Setup(x => x.GetCourseById<DetailsViewModel>(courseId));
@@ -99,7 +99,6 @@
         [Fact]
         public async Task UpdateCourseNameCorrect()
         {
-            var studentId = Guid.NewGuid().ToString();
             var courseId = Guid.NewGuid().ToString();
             var course = new Course
             {
@@ -122,8 +121,12 @@
             };
 
             await this.service.UpdateAsync(editModel);
-            var up = this.service.GetById(course.Id);
-            Assert.NotEqual("C# web", up.Name);
+            var updateCourse = this.service.GetById(course.Id);
+            Assert.NotEqual("C# web", updateCourse.Name);
+            Assert.NotEqual("hard course", updateCourse.Description);
+            Assert.Equal(updateCourse.Name, editModel.Name);
+            Assert.Equal(updateCourse.Name, course.Name);
+            Assert.Equal(course.Id, updateCourse.Id);
         }
     }
 }
