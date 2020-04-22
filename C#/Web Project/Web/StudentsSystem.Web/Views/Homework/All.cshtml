@@ -18,7 +18,7 @@
                 <h3>
                     <a href="/Homework/Details?id=@homework.Id">@homework.Name</a>
                 </h3>
-                <a class="btn btn-success text-white float-lg-right" href="/Homework/Delete?id=@homework.Id">Delete</a>
+                <a class="btn btn-success text-white float-lg-right" onclick="return confirm('Are you sure!')" href="/Homework/Delete?id=@homework.Id">Delete</a>
             </div>
         }
     </div>

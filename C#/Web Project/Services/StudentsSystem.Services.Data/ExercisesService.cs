@@ -35,7 +35,7 @@
 
         public async Task DeleteByIdAsync(string id)
         {
-            var exercise = this.exerciseRepository.All().Where(x => x.Id == id).FirstOrDefault();
+            var exercise = this.exerciseRepository.All().FirstOrDefault(x => x.Id == id);
             this.exerciseRepository.Delete(exercise);
             await this.exerciseRepository.SaveChangesAsync();
         }

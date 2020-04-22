@@ -33,18 +33,6 @@
         </a>
         <span asp-validation-for="IsReady"></span>
     </div>
-    @*<div>
-            <label>Is Ready</label>
-            <div>
-                <button type="submit" class="btn bg-success text-white" href="/Homework/FinishHomework?id=@Model.Id">Is ready!</button>
-            </div>
-            <div>
-                <a class="btn btn-group-lg bg-danger text-black-50" href="/Homework/NotFinishHomework?id=@Model.Id" onclick="">
-                </a>
-            </div>
-        </div>*@
-
-
     <hr class="bg-success mt-5" style="height: 2px" />
     <div class="d-flex justify-content-around mt-4">
         <button type="submit" class="btn bg-success text-white" href="/Homework/Edit?homeworkId=@Model.Id">Edit</button>
@@ -82,5 +70,5 @@
                     alert(@Model.IsReady);
                 });
             });
-        </script>*@
+    </script>*@
 }

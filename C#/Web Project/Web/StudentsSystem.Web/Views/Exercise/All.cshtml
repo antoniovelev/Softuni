@@ -4,20 +4,47 @@
 }
 
 <h1>All Exercise</h1>
+@{
+    var id = "";
+    <hr class="bg-success" style="height: 2px" />
+    <main>
+        <hr class="bg-success" style="height: 2px" />
+        <hr class="bg-success" style="height: 2px" />
+        <div id="albums">
+            @foreach (var exercise in Model.Exercises)
+            {
+                id = @exercise.Id;
+                <div>
+                    <h3>
+                        <a href="/Exercise/Details?id=@exercise.Id">@exercise.Name</a>
+                    </h3>
+                    <div class="text-center">
+                        <a href="#myModal" class="trigger-btn btn btn-success" data-toggle="modal">Delete</a>
+                    </div>
+                </div>
+            }
+        </div>
 
-<hr class="bg-success" style="height: 2px" />
-<main>
-    <hr class="bg-success" style="height: 2px" />
-    <hr class="bg-success" style="height: 2px" />
-    <div id="albums">
-        @foreach (var exercise in Model.Exercises)
-        {
-            <div>
-                <h3>
-                    <a href="/Exercise/Details?id=@exercise.Id">@exercise.Name</a>
-                </h3>
-                <a class="btn btn-success text-white float-lg-right" href="/Exercise/Delete?id=@exercise.Id">Delete</a>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE5CD;</i>
+                        </div>
+                        <h4 class="modal-title">Are you sure?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        <a href="/Exercise/Delete?id=@id" class="btn btn-success text-white float-lg-right">Delete</a>
+                    </div>
+                </div>
             </div>
-        }
-    </div>
-</main>
+        </div>
+
+    </main>
+}
