@@ -1,20 +1,19 @@
 ﻿@model StudentsSystem.Web.ViewModels.Course.AllViewModel;
 @{
-    ViewData["Title"] = "Old";
+    ViewData["Title"] = "Old Courses";
 }
 
-<h1>Old</h1>
+<h1>Old Courses</h1>
 
 <main>
     <hr class="bg-success" style="height: 2px" />
     <div id="albums">
         @foreach (var course in Model.Courses)
         {
-            <div>
-                <h3>
+            <div class="row">
+                <h3 class="col-md-5">
                     <a href="/Course/OldCourseDetails?id=@course.Id">@course.Name</a>
                 </h3>
-                <a class="btn btn-success text-white float-lg-right" href="/Course/Delete?id=@course.Id">Delete</a>
             </div>
         }
     </div>

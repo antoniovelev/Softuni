@@ -6,10 +6,10 @@
 <h1>OldCourseDetails</h1>
 
 <div class="blog margin-bottom-40 d-flex justify-content-between">
-    <div class="course-data justify-content-center col-md-9">
+    <div class="course-data justify-content-center col-md-7">
         <div class="card-header">Course Name: @Model.Name</div>
-        <div class="card-header">Course StartOn: @Convert.ToDateTime(@Model.StartOn).ToString("dd-MM-yyyy")</div>
-        <div class="card-header">Course EndOn: @Convert.ToDateTime(@Model.EndOn).ToString("dd-MM-yyyy")</div>
+        <div class="card-header">Course StartOn:@Model.StartOn</div>
+        <div class="card-header">Course EndOn: @Model.EndOn</div>
         <div class="card-header">Course Duration: @Model.Duration</div>
         <div class="card-header">Course Description: @Model.Description</div>
         <div class="card-header">Course Grade: @Model.Grade</div>

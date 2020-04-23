@@ -1,5 +1,6 @@
 ﻿namespace StudentsSystem.Web.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -70,6 +71,7 @@
         public IActionResult Details(string id)
         {
             var viewModel = this.eventsService.GetEventById<DetailsViewModel>(id);
+            viewModel.Date = Convert.ToDateTime(viewModel.Date).ToString("dd-MM-yyyy");
             if (viewModel == null)
             {
                 return this.NotFound();
@@ -84,7 +86,7 @@
         {
             var inputModel = this.eventsService.GetEventById<EditInputModel>(eventId);
 
-            inputModel.Date = string.Empty;
+            inputModel.Date = Convert.ToDateTime(inputModel.Date).ToString("dd-MM-yyyy");
             return this.View(inputModel);
         }
 

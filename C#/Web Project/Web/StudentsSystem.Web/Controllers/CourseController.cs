@@ -90,6 +90,8 @@
         public IActionResult Details(string id)
         {
             var viewModel = this.coursesService.GetCourseById<DetailsViewModel>(id);
+            viewModel.StartOn = Convert.ToDateTime(viewModel.StartOn).ToString("dd-MM-yyyy");
+            viewModel.EndOn = Convert.ToDateTime(viewModel.EndOn).ToString("dd-MM-yyyy");
 
             if (viewModel == null)
             {
@@ -104,6 +106,8 @@
         public IActionResult OldCourseDetails(string id)
         {
             var viewModel = this.coursesService.GetCourseById<DetailsViewModel>(id);
+            viewModel.StartOn = Convert.ToDateTime(viewModel.StartOn).ToString("dd-MM-yyyy");
+            viewModel.EndOn = Convert.ToDateTime(viewModel.EndOn).ToString("dd-MM-yyyy");
             if (viewModel == null)
             {
                 return this.NotFound();
@@ -117,8 +121,8 @@
         public IActionResult Edit(string courseId)
         {
             var inputModel = this.coursesService.GetCourseById<EditInputModel>(courseId);
-            inputModel.StartOn = string.Empty;
-            inputModel.EndOn = string.Empty;
+            inputModel.StartOn = Convert.ToDateTime(inputModel.StartOn).ToString("dd-MM-yyyy");
+            inputModel.EndOn = Convert.ToDateTime(inputModel.EndOn).ToString("dd-MM-yyyy");
             return this.View(inputModel);
         }
 
@@ -135,7 +139,7 @@
             }
 
             await this.coursesService.UpdateAsync(inputModel);
-            return this.Redirect("/Course/All");
+            return this.Redirect("/Course/Details?id=" + inputModel.Id);
         }
 
         [Authorize]

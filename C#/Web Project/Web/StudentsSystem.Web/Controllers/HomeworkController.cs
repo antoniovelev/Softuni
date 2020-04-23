@@ -31,7 +31,7 @@
         public async Task<IActionResult> All()
         {
             var user = await this.userManager.GetUserAsync(this.User);
-            var homeworks = this.homeworksService.GetAllHomeworks().Where(x => x.UserId == user.Id);
+            var homeworks = this.homeworksService.GetAllHomeworks().Where(x => x.UserId == user.Id && x.IsReady == false);
 
             var viewModel = new AllViewModel
             {
@@ -85,6 +85,21 @@
         public IActionResult Details(string id)
         {
             var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
+            viewModel.EndDate = Convert.ToDateTime(viewModel.EndDate).ToString("dd-MM-yyyy");
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult OldHomeworksDetails(string id)
+        {
+            var viewModel = this.homeworksService.GetHomeworkById<DetailsViewModel>(id);
+            viewModel.EndDate = Convert.ToDateTime(viewModel.EndDate).ToString("dd-MM-yyyy");
             if (viewModel == null)
             {
                 return this.NotFound();
@@ -98,7 +113,7 @@
         public IActionResult Edit(string homeworkId)
         {
             var inputModel = this.homeworksService.GetHomeworkById<EditInputModel>(homeworkId);
-            inputModel.EndDate = string.Empty;
+            inputModel.EndDate = Convert.ToDateTime(inputModel.EndDate).ToString("dd-MM-yyyy");
             return this.View(inputModel);
         }
 
@@ -116,7 +131,12 @@
             }
 
             await this.homeworksService.UpdateAsync(inputModel);
-            return this.Redirect("/Homework/Details?id=" + inputModel.Id);
+            if (inputModel.IsReady == false)
+            {
+                return this.Redirect("/Homework/Details?id=" + inputModel.Id);
+            }
+
+            return this.Redirect("/Homework/Old");
         }
 
         [Authorize]
@@ -130,22 +150,6 @@
 
             await this.homeworksService.DeleteByIdAsync(id);
             return this.Redirect("/Homework/All");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FinishHomework(string id)
-        {
-            var homework = this.homeworksService.GetById(id);
-            await this.homeworksService.SetFinishedAsync(homework);
-            return this.Redirect("/Homework/Details?id=" + homework.Id);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> NotFinishHomework(string id)
-        {
-            var homework = this.homeworksService.GetById(id);
-            await this.homeworksService.SetNotFinishedAsync(homework);
-            return this.Redirect("/Homework/Details?id=" + homework.Id);
         }
     }
 }

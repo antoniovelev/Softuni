@@ -18,7 +18,7 @@
     </div>
     <div>
         <label asp-for="EndDate"></label>
-        <input asp-for="EndDate" class="form-control" id="datepicker">
+        <input type="datetime" value="@Model.EndDate" asp-for="EndDate" class="form-control" id="datepicker">
         <span asp-validation-for="EndDate" class="text-danger"></span>
     </div>
     <div>
@@ -28,15 +28,20 @@
     </div>
     <div>
         <label asp-for="IsReady"></label>
-        <a href="#" class="btn btn-success" id="check" onclick="setTrue(@Model.IsReady)">
-            <i class="fa-check-circle bg-success"></i>
-        </a>
+        @*<div class="form-check">
+                <input asp-for="IsReady" type="checkbox" class="form-check-input" id="exampleCheck1" checked="@Model.IsReady">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>*@
+        <div class="custom-control custom-checkbox">
+            <input asp-for="IsReady" type="checkbox" class="custom-control-input" id="defaultUnchecked">
+            <label class="custom-control-label" for="defaultUnchecked">Check if your homework is ready!</label>
+        </div>
         <span asp-validation-for="IsReady"></span>
     </div>
     <hr class="bg-success mt-5" style="height: 2px" />
     <div class="d-flex justify-content-around mt-4">
         <button type="submit" class="btn bg-success text-white" href="/Homework/Edit?homeworkId=@Model.Id">Edit</button>
-        <a href="/Homework/Details?homeworkId=@Model.Id" class="btn bg-success text-white">Back To Event</a>
+        <a href="/Homework/Details?id=@Model.Id" class="btn bg-success text-white">Back To Homework</a>
     </div>
 </form>
 
@@ -46,29 +51,15 @@
     <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
     <script src="~/js/datepicker-init.js"></script>
 
-    <script>
-        function setTrue(isReady) {
-            var change = isReady;
-            change = true;
-
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("Edit", "Homework ")',
-                contentType: "application/json; charset=utf-8",
-                data: { a: "testing" },
-                dataType: "json",
-            });
-        }
-    </script>
 
     @*<script>
-            $(document).ready(function () {
-                console.log("ready!");
-                $("#target").click(function () {
+                $(document).ready(function () {
+                    console.log("ready!");
+                    $("#target").click(function () {
 
-                    @Model.IsReady = true;
-                    alert(@Model.IsReady);
+                        @Model.IsReady = true;
+                        alert(@Model.IsReady);
+                    });
                 });
-            });
-    </script>*@
+        </script>*@
 }

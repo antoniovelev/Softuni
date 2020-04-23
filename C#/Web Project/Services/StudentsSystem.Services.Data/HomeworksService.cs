@@ -83,6 +83,7 @@
             homework.Name = inputModel.Name;
             homework.EndDate = DateTime.ParseExact(inputModel.EndDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             homework.Description = inputModel.Description;
+            homework.IsReady = inputModel.IsReady;
             homework.CourseId = inputModel.CourseId;
 
             this.homeworkRepository.Update(homework);

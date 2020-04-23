@@ -8,17 +8,15 @@
     var id = "";
     <hr class="bg-success" style="height: 2px" />
     <main>
-        <hr class="bg-success" style="height: 2px" />
-        <hr class="bg-success" style="height: 2px" />
         <div id="albums">
             @foreach (var exercise in Model.Exercises)
             {
                 id = @exercise.Id;
-                <div>
-                    <h3>
+                <div class="row">
+                    <h3 class="col-md-5">
                         <a href="/Exercise/Details?id=@exercise.Id">@exercise.Name</a>
                     </h3>
-                    <div class="text-center">
+                    <div class="text-center col-md-4">
                         <a href="#myModal" class="trigger-btn btn btn-success" data-toggle="modal">Delete</a>
                     </div>
                 </div>

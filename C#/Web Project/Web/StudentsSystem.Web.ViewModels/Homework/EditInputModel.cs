@@ -19,7 +19,7 @@
         public string Description { get; set; }
 
         [Required]
-        public bool IsReady { get; set; } = false;
+        public bool IsReady { get; set; }
 
         public string CourseId { get; set; }
 
