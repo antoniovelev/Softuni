@@ -10,12 +10,13 @@
 <hr />
 <div class="blog margin-bottom-40 d-flex justify-content-between">
     <div class="course-data justify-content-center col-md-7">
-        <div class="card-header">Course Name: @Model.Name</div>
-        <div class="card-header">Course StartOn: @Model.StartOn</div>
-        <div class="card-header">Course EndOn: @Model.EndOn</div>
-        <div class="card-header">Course Duration: @Model.Duration</div>
-        <div class="card-header">Course Description: @Model.Description</div>
-        <div class="d-flex justify-content-between">
+        <div class="card-header"><h3>Course Name: @Model.Name</h3></div>
+        <div class="card-header"><h3>Course StartOn: @Model.StartOn</h3></div>
+        <div class="card-header"><h3>Course EndOn: @Model.EndOn</h3></div>
+        <div class="card-header"><h3>Course Duration: @Model.Duration</h3></div>
+        <div class="card-header"><h3>Course Description: @Model.Description</h3></div>
+        <hr class="bg-success mt-5" style="height: 2px" />
+        <div class="d-flex justify-content-around mt-4">
             <a class="btn bg-success text-white asd" asp-controller="Course" asp-action="All">Back To All</a>
             <a class="nav-link bg-success text-white asd" href="/Course/Edit?courseId=@Model.Id">Edit</a>
             <a class="nav-link bg-success text-white asd" href="/Event/Create?courseId=@Model.Id">Create Event</a>

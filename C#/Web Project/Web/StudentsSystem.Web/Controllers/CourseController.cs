@@ -33,11 +33,11 @@
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var allCourses = this.coursesService.GetAllCourses(RecordsPerPage, (int)((page - 1) * RecordsPerPage)).Where(s => s.UserId == user.Id);
+            var allCourses = this.coursesService.GetAllCourses(user.Id, RecordsPerPage, (int)((page - 1) * RecordsPerPage));
 
             var viewModel = new AllViewModel
             {
-                Courses = user.Courses.Where(x => !x.Grade.HasValue),
+                Courses = allCourses,
                 CurrentPage = (int)page,
             };
 
@@ -51,10 +51,10 @@
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var allCourses = this.coursesService.GetAllCourses(RecordsPerPage, (int)((page - 1) * RecordsPerPage)).Where(x => x.Grade.HasValue && x.UserId == user.Id);
+            var allCourses = this.coursesService.GetAllCourses(user.Id, RecordsPerPage, (int)((page - 1) * RecordsPerPage));
             var viewModel = new AllViewModel
             {
-                Courses = allCourses,
+                Courses = allCourses.Where(x => x.Grade.HasValue),
                 CurrentPage = (int)page,
             };
 

@@ -46,10 +46,10 @@
                         options.MinimumSameSitePolicy = SameSiteMode.None;
                     });
 
-            //services.AddControllersWithViews(options =>
-            //{
-            //    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
-            //});
+            services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
 
             services.AddRazorPages();
 
@@ -97,6 +97,8 @@
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            app.UseStatusCodePagesWithReExecute("/Home/Index");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

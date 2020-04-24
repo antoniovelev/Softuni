@@ -8,9 +8,10 @@
 <hr />
 <div class="blog margin-bottom-40 d-flex justify-content-between">
     <div class="course-data justify-content-center col-md-7">
-        <div class="card-header">Event Name: @Model.Name</div>
-        <div class="card-header">Event Date: @Model.Date</div>
-        <div class="d-flex justify-content-between">
+        <div class="card-header text-xl-left text-white-50"><h3>Event Name: @Model.Date</h3></div>
+        <div class="card-header text-lg-left text-white"><h3>Event Date: @Model.Date</h3></div>
+        <hr class="bg-success mt-5" style="height: 2px" />
+        <div class="d-flex justify-content-around mt-4">
             <a class="btn bg-success text-white" asp-controller="Event" asp-action="All">Back To All</a>
             <a class="nav-link bg-success text-white" href="/Event/Edit?eventId=@Model.Id">Edit</a>
         </div>

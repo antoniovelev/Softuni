@@ -8,7 +8,7 @@
 
     public interface ICoursesService
     {
-        IEnumerable<Course> GetAllCourses(int? take = null, int skip = 0);
+        IEnumerable<Course> GetAllCourses(string userId, int? take = null, int skip = 0);
 
         Task CreateAsync(string userId, CreateInputModel inputModel);
 

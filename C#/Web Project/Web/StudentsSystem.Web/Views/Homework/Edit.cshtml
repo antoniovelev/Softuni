@@ -28,10 +28,6 @@
     </div>
     <div>
         <label asp-for="IsReady"></label>
-        @*<div class="form-check">
-                <input asp-for="IsReady" type="checkbox" class="form-check-input" id="exampleCheck1" checked="@Model.IsReady">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>*@
         <div class="custom-control custom-checkbox">
             <input asp-for="IsReady" type="checkbox" class="custom-control-input" id="defaultUnchecked">
             <label class="custom-control-label" for="defaultUnchecked">Check if your homework is ready!</label>
@@ -39,7 +35,7 @@
         <span asp-validation-for="IsReady"></span>
     </div>
     <hr class="bg-success mt-5" style="height: 2px" />
-    <div class="d-flex justify-content-around mt-4">
+    <div class="d-flex justify-content-around mt-4">    
         <button type="submit" class="btn bg-success text-white" href="/Homework/Edit?homeworkId=@Model.Id">Edit</button>
         <a href="/Homework/Details?id=@Model.Id" class="btn bg-success text-white">Back To Homework</a>
     </div>
@@ -50,16 +46,4 @@
     <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js"></script>
     <script src="~/js/datepicker-init.js"></script>
-
-
-    @*<script>
-                $(document).ready(function () {
-                    console.log("ready!");
-                    $("#target").click(function () {
-
-                        @Model.IsReady = true;
-                        alert(@Model.IsReady);
-                    });
-                });
-        </script>*@
 }

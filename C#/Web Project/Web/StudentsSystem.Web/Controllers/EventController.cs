@@ -43,6 +43,11 @@
         [HttpGet]
         public IActionResult Create(string courseId)
         {
+            if (courseId == null)
+            {
+                return this.NotFound("Somew");
+            }
+
             var model = new CreateInputModel()
             {
                 CourseId = courseId,

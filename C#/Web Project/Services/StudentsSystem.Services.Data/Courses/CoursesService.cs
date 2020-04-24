@@ -43,10 +43,12 @@
             await this.courseRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<Course> GetAllCourses(int? take = null, int skip = 0)
+        public IEnumerable<Course> GetAllCourses(string userId, int? take = null, int skip = 0)
         {
-            var allCourses = this.courseRepository.All()
+            var allCourses = this.courseRepository
+                .All()
                 .OrderByDescending(s => s.CreatedOn)
+                .Where(s => s.UserId == userId && !s.Grade.HasValue)
                 .Skip(skip);
 
             if (take.HasValue)
