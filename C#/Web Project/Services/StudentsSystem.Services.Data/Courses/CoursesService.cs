@@ -59,10 +59,38 @@
             return allCourses.ToList();
         }
 
+        public IEnumerable<Course> GetAllOldCourses(string userId, int? take = null, int skip = 0)
+        {
+            var allCourses = this.courseRepository
+                .All()
+                .OrderByDescending(s => s.CreatedOn)
+                .Where(s => s.UserId == userId && s.Grade.HasValue)
+                .Skip(skip);
+
+            if (take.HasValue)
+            {
+                allCourses = allCourses.Take(take.Value);
+            }
+
+            return allCourses.ToList();
+        }
+
         public Course GetById(string id)
         {
             var course = this.courseRepository.All().FirstOrDefault(x => x.Id == id);
             return course;
+        }
+
+        public int GetCount(string userId)
+        {
+            var count = this.courseRepository.All().Where(s => s.UserId == userId && !s.Grade.HasValue).Count();
+            return count;
+        }
+
+        public int GetOldCoursesCount(string userId)
+        {
+            var count = this.courseRepository.All().Where(s => s.UserId == userId && s.Grade.HasValue).Count();
+            return count;
         }
 
         public T GetCourseById<T>(string id)

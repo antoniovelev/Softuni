@@ -40,8 +40,8 @@
                 Courses = allCourses,
                 CurrentPage = (int)page,
             };
-
-            viewModel.PagesCount = (int)Math.Ceiling((double)allCourses.Count() / RecordsPerPage);
+            var count = this.coursesService.GetCount(user.Id);
+            viewModel.PagesCount = (int)Math.Ceiling((double)count / RecordsPerPage);
             return this.View(viewModel);
         }
 
@@ -51,14 +51,14 @@
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            var allCourses = this.coursesService.GetAllCourses(user.Id, RecordsPerPage, (int)((page - 1) * RecordsPerPage));
+            var allCourses = this.coursesService.GetAllOldCourses(user.Id, RecordsPerPage, (int)((page - 1) * RecordsPerPage));
             var viewModel = new AllViewModel
             {
                 Courses = allCourses.Where(x => x.Grade.HasValue),
                 CurrentPage = (int)page,
             };
-
-            viewModel.PagesCount = (int)Math.Ceiling((double)allCourses.Count() / RecordsPerPage);
+            var count = this.coursesService.GetOldCoursesCount(user.Id);
+            viewModel.PagesCount = (int)Math.Ceiling((double)count / RecordsPerPage);
             return this.View(viewModel);
         }
 
