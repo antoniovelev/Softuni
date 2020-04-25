@@ -139,6 +139,11 @@
             }
 
             await this.coursesService.UpdateAsync(inputModel);
+            if (!string.IsNullOrWhiteSpace(inputModel.Grade))
+            {
+                return this.Redirect("/Course/OldCourseDetails?id=" + inputModel.Id);
+            }
+
             return this.Redirect("/Course/Details?id=" + inputModel.Id);
         }
 

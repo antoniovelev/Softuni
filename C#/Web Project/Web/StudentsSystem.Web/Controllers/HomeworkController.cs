@@ -42,9 +42,11 @@
 
         [Authorize]
         [HttpGet]
-        public IActionResult Old()
+        public async Task<IActionResult> Old()
         {
-            var oldHomeworks = this.homeworksService.GetAllHomeworks().Where(x => x.IsReady == true);
+            var user = await this.userManager.GetUserAsync(this.User);
+
+            var oldHomeworks = this.homeworksService.GetAllHomeworks().Where(x => x.UserId == user.Id && x.IsReady == true);
             var viewModel = new AllViewModel
             {
                 Homeworks = oldHomeworks,

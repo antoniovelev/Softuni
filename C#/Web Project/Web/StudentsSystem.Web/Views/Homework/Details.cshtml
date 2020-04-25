@@ -3,12 +3,14 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Homework Details</h1>
+<hr class="bg-success" style="height: 2px" />
 <hr />
+
 <div class="blog margin-bottom-40 d-flex justify-content-between">
     <div class="course-data justify-content-center col-md-7">
-        <div class="card-header text-black-50"><h3>Homework Name: @Model.Name</h3></div>
-        <div class="card-header text-black-70"><h3>Homework Date: @Model.EndDate</h3></div>
+        <div class="card-header"><h3>Homework Name: @Model.Name</h3></div>
+        <div class="card-header"><h3>Homework Date: @Model.EndDate</h3></div>
         <div class="card-header text-black-opacity-05"><h3>Homework Description: @Model.Description</h3></div>
         <hr class="bg-success mt-5" style="height: 2px" />
         <div class="d-flex justify-content-around mt-4">

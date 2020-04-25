@@ -4,12 +4,13 @@
     this.ViewData["Title"] = "Information about events";
 }
 
-<h1 class="display-4">Details</h1>
+<h1>Event Details</h1>
+<hr class="bg-success" style="height: 2px" />
 <hr />
 <div class="blog margin-bottom-40 d-flex justify-content-between">
     <div class="course-data justify-content-center col-md-7">
-        <div class="card-header text-xl-left text-white-50"><h3>Event Name: @Model.Date</h3></div>
-        <div class="card-header text-lg-left text-white"><h3>Event Date: @Model.Date</h3></div>
+        <div class="card-header"><h3>Event Name: @Model.Date</h3></div>
+        <div class="card-header"><h3>Event Date: @Model.Date</h3></div>
         <hr class="bg-success mt-5" style="height: 2px" />
         <div class="d-flex justify-content-around mt-4">
             <a class="btn bg-success text-white" asp-controller="Event" asp-action="All">Back To All</a>
